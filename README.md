@@ -217,9 +217,10 @@ installing a skill is just putting its folder in the skills directory:
 | Kiro | `.kiro/skills/<name>/` |
 | Gemini CLI · Codex CLI | `.agents/skills/<name>/` (the shared path both read) |
 
-Editor tools (Cursor, Windsurf, Cline) load **rules files** instead of `SKILL.md`, so a skill is
-converted to their rule format — `scripts/adapters/generate-rules` does that. Exact paths,
-triggers, and the full mapping live in [`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md).
+Editor tools (Cursor, Windsurf, Cline) load **rules files** instead of `SKILL.md`. There's no
+automated converter yet, so for now you adapt a skill by hand — drop the `SKILL.md` body into
+the editor's rule file. The target paths and the full mapping are in
+[`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md).
 
 ## Demo
 
