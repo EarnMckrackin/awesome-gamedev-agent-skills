@@ -17,6 +17,11 @@ the skill's `name`. To install a skill, copy that `<name>/` folder (with its `re
 `scripts/`, `assets/` if present) into the agent's skills directory. Skill names are unique
 across this repository, so installing every skill into one flat directory is safe.
 
+**Install the router too.** The [`router/`](../router) folder is itself a skill (its `SKILL.md`
+is the dispatcher). Copy it in alongside the others so the agent can route requests:
+`cp -R router <agent-skills-dir>/router`. The bulk-install snippets below copy everything under
+`skills/`; add the router with the extra line shown for Claude Code.
+
 > The examples below use one skill (`godot-tilemap`) and POSIX shell. On Windows PowerShell,
 > replace `cp -R src dest` with `Copy-Item -Recurse src dest` and `mkdir -p` with `mkdir`.
 
@@ -31,6 +36,7 @@ cp -R skills/godot/godot-tilemap .claude/skills/
 find skills -name SKILL.md -type f -exec dirname {} \; | while read -r d; do
   cp -R "$d" .claude/skills/
 done
+cp -R router .claude/skills/router   # the dispatcher — install it too
 ```
 
 For all projects, copy into `~/.claude/skills/` instead. Claude Code auto-triggers a skill from

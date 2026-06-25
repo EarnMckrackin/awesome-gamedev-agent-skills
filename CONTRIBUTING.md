@@ -57,6 +57,32 @@ python scripts/validate-skills.py
 
 It exits non-zero and prints a report if anything fails.
 
+## Updating the router when you add a skill
+
+The [master router](router/SKILL.md) only routes to skills it knows about, so a new skill is
+not "done" until the router can reach it. When you add a skill, update the router in the same
+PR:
+
+1. **Catalog row.** Add the skill to its category table in
+   [`docs/skill-catalog.md`](docs/skill-catalog.md) with its scope, version, primary sources,
+   and `files:`/`says:` router signals. (For v1 the catalog is frozen; post-v1 skills extend
+   it.)
+2. **Routing table.** Add the skill to the matching section of
+   [`router/SKILL.md`](router/SKILL.md) §3 — under its engine in §3a, or as a discipline (§3b),
+   genre (§3c), or workflow (§3d) — and to the exhaustive
+   [`router/references/routing-table.md`](router/references/routing-table.md) with its trigger
+   words and any engine bindings.
+3. **Detection (engines only).** If the skill introduces a new engine or a new project-file
+   signal, add it to the fingerprint table in §1 and to
+   [`router/references/engine-detection.md`](router/references/engine-detection.md).
+4. **Composition (genres).** If it's a genre, list the skills it `composes:` so it links out
+   instead of re-teaching primitives.
+5. **Re-validate.** Run the validator (it checks `router/SKILL.md` too) and confirm a sample
+   prompt routes to the new skill.
+
+Keep the router lean: it dispatches by `name` + `description`, so a precise description (see
+[`docs/SKILL-FORMAT.md`](docs/SKILL-FORMAT.md) §3) does most of the routing work.
+
 ## Commits & PRs
 
 - Use **conventional commits**: `feat(<category>): …`, `docs: …`, `chore: …`,
