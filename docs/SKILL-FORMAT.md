@@ -7,8 +7,7 @@ fully before authoring or reviewing a skill.
 > **Status: FROZEN for v1.** This standard is applied as written — do not reinterpret it. If a
 > genuine gap or contradiction is found, raise it in review and resolve it there; do not silently
 > diverge. The companion files are [`COMPATIBILITY.md`](COMPATIBILITY.md) (where each agent
-> looks for skills), [`INSTALLATION.md`](INSTALLATION.md) (how to install them), and
-> [`skill-catalog.md`](skill-catalog.md) (the frozen list of v1 skills + sources + router signals).
+> looks for skills) and [`INSTALLATION.md`](INSTALLATION.md) (how to install them).
 
 > **Format basis:** the **Agent Skills open standard** (agentskills.io), consumed natively by
 > Claude Code, the Claude Agent SDK, Kiro, Gemini CLI, Codex CLI, and compatible agents. The

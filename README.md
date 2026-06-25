@@ -6,7 +6,7 @@
 right skill for whatever you're building.**
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-62%20%2B%20router-brightgreen)](docs/skill-catalog.md)
+[![Skills](https://img.shields.io/badge/skills-62%20%2B%20router-brightgreen)](skills/)
 [![Format](https://img.shields.io/badge/format-Agent%20Skills-informational)](docs/SKILL-FORMAT.md)
 [![Last commit](https://img.shields.io/github/last-commit/AbhishekBarali/awesome-gamedev-agent-skills)](https://github.com/AbhishekBarali/awesome-gamedev-agent-skills/commits/main)
 
@@ -57,13 +57,11 @@ steps, then composes the result:
    first, then the discipline concept, then genre glue — and opens a skill's `references/`
    only when the subtask needs that depth. It re-routes when the task pivots to a new concern.
 
-Engine selection is exclusive; disciplines, genres, and workflows are additive. Full design:
-[`router/ROUTER-SPEC.md`](router/ROUTER-SPEC.md).
+Engine selection is exclusive; disciplines, genres, and workflows are additive.
 
 ## Catalog
 
-62 skills across 8 categories. The authoritative list, with target versions, primary sources,
-and router signals, is [`docs/skill-catalog.md`](docs/skill-catalog.md).
+62 skills across 8 categories — each links to its `SKILL.md` below.
 
 ### Engines
 
@@ -211,8 +209,8 @@ why._
 
 ```
 skills/        62 specialized skills, grouped by engine / discipline / genre / workflow
-router/        the master router skill (+ ROUTER-SPEC.md and references/)
-docs/          authoring standard, installation, compatibility, catalog
+router/        the master router skill (+ references/)
+docs/          authoring standard, installation, compatibility
 templates/     SKILL.md template
 scripts/       validate-skills.py and tooling
 ```
