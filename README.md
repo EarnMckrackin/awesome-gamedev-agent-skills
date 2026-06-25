@@ -212,7 +212,7 @@ why._
 ```
 skills/        62 specialized skills, grouped by engine / discipline / genre / workflow
 router/        the master router skill (+ ROUTER-SPEC.md and references/)
-docs/          authoring standard, installation, compatibility, catalog, build log
+docs/          authoring standard, installation, compatibility, catalog
 templates/     SKILL.md template
 scripts/       validate-skills.py and tooling
 ```

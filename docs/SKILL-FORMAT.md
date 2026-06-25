@@ -1,12 +1,11 @@
 # Skill Authoring Standard
 
 This is the canonical standard for every skill in this repository. It is the contract
-that keeps 60+ skills, written across many sessions, consistent and high quality. Read it
+that keeps 60+ skills consistent and high quality. Read it
 fully before authoring or reviewing a skill.
 
-> **Status: FROZEN for v1 (locked at session S05).** Authoring sessions build against this
-> document as written — do not reinterpret it. If a genuine gap or contradiction is found,
-> note it in the session's progress doc and the QA session (S13) resolves it; do not silently
+> **Status: FROZEN for v1.** This standard is applied as written — do not reinterpret it. If a
+> genuine gap or contradiction is found, raise it in review and resolve it there; do not silently
 > diverge. The companion files are [`COMPATIBILITY.md`](COMPATIBILITY.md) (where each agent
 > looks for skills), [`INSTALLATION.md`](INSTALLATION.md) (how to install them), and
 > [`skill-catalog.md`](skill-catalog.md) (the frozen list of v1 skills + sources + router signals).
@@ -205,7 +204,7 @@ heart of the standard. Every rule above and rubric item below traces back to one
 - All skills are licensed **Apache-2.0** (repo default). If a pattern is genuinely derived from
   a permissively licensed source, attribute it in [`NOTICE`](../NOTICE).
 - **No growth/marketing language** in any committed file (no "stars", launch, or
-  competitor-comparison text). The QA session (S13) runs an originality pass.
+  competitor-comparison text).
 
 ---
 
@@ -226,7 +225,7 @@ The `SKILL.md` open standard is the portable core. The full per-agent breakdown 
 
 ## 9. Quality rubric (a skill ships only if every box is true)
 
-This rubric is what the validator and the QA session enforce. `[E]` = checked as a hard error
+This rubric is what the validator and review enforce. `[E]` = checked as a hard error
 by `scripts/validate-skills.py`; `[W]` = warning / human-reviewed.
 
 - [ ] **[E]** Folder name = `name`; lowercase/digits/hyphens; ≤64 chars; no leading/trailing/
@@ -251,7 +250,7 @@ by `scripts/validate-skills.py`; `[W]` = warning / human-reviewed.
 ## 10. The golden reference skill
 
 [`skills/other-engines/love2d-core/`](../skills/other-engines/love2d-core/) is the **golden
-reference** authored in S05. It demonstrates this standard end-to-end: a routing-rule
+reference**. It demonstrates this standard end-to-end: a routing-rule
 description, the six body sections, ≥2 version-pinned patterns, a pitfalls list, and a
 `references/` file for progressive disclosure. **Copy its shape.** When in doubt about
 structure, open it.

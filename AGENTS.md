@@ -13,8 +13,8 @@ plus a master router skill. The portable core is the `SKILL.md` open standard.
 
 1. Read [`docs/SKILL-FORMAT.md`](docs/SKILL-FORMAT.md) — the authoring standard.
 2. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) — the rubric and commit conventions.
-3. Check [`docs/progress/INDEX.md`](docs/progress/INDEX.md) to see what already exists;
-   do not redo finished work.
+3. Check [`docs/skill-catalog.md`](docs/skill-catalog.md) and the existing `skills/` to see
+   what is already covered.
 4. Start from [`templates/SKILL.template.md`](templates/SKILL.template.md).
 
 ## Rules

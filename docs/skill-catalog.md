@@ -2,15 +2,15 @@
 
 This is the **frozen v1 catalog**: the authoritative list of every skill in the collection,
 with its target version, primary documentation, router signals, and build status. It is the
-file the authoring sessions (S06–S11) build against and the router session (S12) routes from.
+authoritative list the skills are built against and the master router routes from.
 
-> **Status: FROZEN at S05.** The names, categories, and counts below are locked for v1. New
-> skills arrive as post-v1 contributions, not by editing this list mid-wave. The authoring
+> **Status: FROZEN for v1.** The names, categories, and counts below are locked for v1. New
+> skills arrive as post-v1 contributions, not by editing this list mid-cycle. The authoring
 > standard is [`SKILL-FORMAT.md`](SKILL-FORMAT.md); where skills install is
 > [`COMPATIBILITY.md`](COMPATIBILITY.md); the routing design is
 > [`../router/ROUTER-SPEC.md`](../router/ROUTER-SPEC.md).
 
-## How authoring sessions use this file
+## How to use this file
 
 1. Find your category's table. Each row is one skill you will author as
    `skills/<category>/<name>/SKILL.md`.
@@ -32,21 +32,21 @@ file the authoring sessions (S06–S11) build against and the router session (S1
 - **Router signals** — `files:` project-file/extension detection · `says:` user-phrase triggers
   (and, for genres, `composes:` the skills it orchestrates).
 - **Status** — `done` (authored & passing the validator) · `golden-done` (golden reference skill).
-  All 62 v1 skills are authored as of S12; the master router (`router/SKILL.md`) routes them.
+  All 62 v1 skills are authored; the master router (`router/SKILL.md`) routes them.
 
 ## Counts (v1 = 62 skills)
 
-| Category | Count | Owning session |
-|----------|:-----:|----------------|
-| [godot](#godot-15) | 15 | S06 |
-| [unity](#unity-8) | 8 | S07 |
-| [unreal](#unreal-6) | 6 | S07 |
-| [web-engines](#web-engines-6) | 6 | S08 |
-| [other-engines](#other-engines-5) | 5 | S08 |
-| [disciplines](#disciplines-9) | 9 | S09 |
-| [genres](#genres-9) | 9 | S10 |
-| [workflows](#workflows-4) | 4 | S11 |
-| **Total** | **62** | |
+| Category | Count |
+|----------|:-----:|
+| [godot](#godot-15) | 15 |
+| [unity](#unity-8) | 8 |
+| [unreal](#unreal-6) | 6 |
+| [web-engines](#web-engines-6) | 6 |
+| [other-engines](#other-engines-5) | 5 |
+| [disciplines](#disciplines-9) | 9 |
+| [genres](#genres-9) | 9 |
+| [workflows](#workflows-4) | 4 |
+| **Total** | **62** |
 
 ---
 
@@ -195,7 +195,7 @@ Process skills; platform/tooling docs are the primary sources.
 
 ## Composition & single-responsibility rules
 
-The router (S12) composes skills; each skill owns exactly one responsibility.
+The router composes skills; each skill owns exactly one responsibility.
 
 1. **Engine API vs cross-engine concept.** Engine skills teach *the engine's API* for a
    capability; `disciplines/*` teach the *portable concept/algorithm* and defer to the detected
@@ -221,5 +221,4 @@ The router (S12) composes skills; each skill owns exactly one responsibility.
 
 All 62 names are unique repo-wide, lowercase-hyphen, ≤64 chars, match
 `^[a-z0-9]+(-[a-z0-9]+)*$`, and equal their folder names. This list is the authority for the
-exact folder name each authoring session must use. (Verified at S05 — see
-`docs/progress/SESSION-05-standards-lock.md`.)
+exact folder name to use.

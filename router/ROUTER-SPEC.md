@@ -2,10 +2,10 @@
 
 This document specifies the **master router**: the entry-point skill that detects a project's
 engine and the user's task, then dispatches to the right specialized skill(s) so the collection
-"installs once and routes itself." Session **S12** implements this as `router/SKILL.md`; this
-spec is the contract S12 builds to.
+"installs once and routes itself." The router implements this as `router/SKILL.md`; this
+spec is its contract.
 
-> **Status: FROZEN at S05.** The detection signals here are derived from the `files:` / `says:`
+> **Status: FROZEN for v1.** The detection signals here are derived from the `files:` / `says:`
 > columns in [`../docs/skill-catalog.md`](../docs/skill-catalog.md) — the catalog is the source
 > of truth for per-skill triggers; this spec is the *algorithm* that uses them.
 
@@ -86,7 +86,7 @@ Some tasks also carry **file signals** (`*.yarn`/`*.ink` → `dialogue-systems`/
 
 ## 3. Resolution: the task→category→skill routing table format
 
-S12 fills a table of this shape (one row per routing rule). It is a **lookup**, not prose:
+The router fills a table of this shape (one row per routing rule). It is a **lookup**, not prose:
 
 | Task signal (`says:`/`files:`) | Needs engine? | Engine-skill slot | Discipline/genre/workflow skills | Notes |
 |--------------------------------|:-------------:|-------------------|----------------------------------|-------|
@@ -110,7 +110,7 @@ The router must respect the three-tier disclosure budget (see `SKILL-FORMAT.md` 
    only those. Do not bulk-load a category.
 3. **On demand:** read a skill's `references/*.md` only when the specific subtask requires that
    depth (the skill body says when).
-4. **Re-route on pivot:** if the task changes mid-session (e.g. from movement to saving), select
+4. **Re-route on pivot:** if the task changes mid-task (e.g. from movement to saving), select
    and read the newly relevant skill rather than keeping everything loaded.
 
 The router's output to the user/agent should name the skills it is loading and why, e.g.:
@@ -144,7 +144,7 @@ The router's output to the user/agent should name the skills it is loading and w
 | "how do I design save slots with migration?" | (none) | `save-systems` only — concept question, no engine |
 | "publish my game on itch with butler" | (any/none) | `itch-publish` only |
 
-This matrix doubles as a seed for S13's routing test set.
+This matrix doubles as a seed for the routing test set.
 
 ---
 
@@ -172,7 +172,7 @@ secondary and offer to load it if the user confirms.
 
 ---
 
-## 8. Implementation notes for S12
+## 8. Implementation notes
 
 - Implement as `router/SKILL.md` using the open standard. The **description** must carry broad
   game-dev trigger vocabulary plus the engine names and "router/route/which skill" cues so it

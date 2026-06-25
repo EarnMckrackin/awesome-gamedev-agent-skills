@@ -26,7 +26,7 @@ that Gemini CLI **and** Codex CLI both read is **`.agents/skills/<name>/SKILL.md
 the universal CLI location. Claude Code reads `.claude/skills/`; Kiro reads `.kiro/skills/`.
 Only **Cursor, Windsurf, and Cline** require generated adapters.
 
-## Verified install paths (S13 smoke test)
+## Verified install paths
 
 Checked 2026-06-25 against this repository. The router plus one skill per engine family were
 installed into each native agent's documented location and confirmed to load — valid
