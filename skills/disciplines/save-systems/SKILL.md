@@ -87,14 +87,14 @@ func save_atomic(path: String, data: Dictionary) -> void:
     f.store_string(JSON.stringify(data))
     f.flush()                                    # ensure bytes hit disk
     f.close()
-    DirAccess.rename_absolute(tmp, path)         # rename is atomic on one volume
+    DirAccess.rename_absolute(tmp, path)         # replaces the target; atomic on POSIX
 # WRONG: opening `path` directly and writing in place — a crash mid-write leaves a
 # truncated, unloadable save and destroys the player's progress.
 ```
 
-Rename-over-target is atomic on the same volume on every major OS — this is the
-core trick behind a corruption-resistant save. Keep the previous file as
-`path + ".bak"` before the rename for a second layer of safety.
+Rename-over-target is atomic on POSIX (same volume); on Windows a replace-by-rename
+isn't guaranteed atomic, so keep the previous file as `path + ".bak"` before the
+rename — that backup is what actually guarantees you can recover from a bad write.
 
 ### 3. Versioned load with migration
 

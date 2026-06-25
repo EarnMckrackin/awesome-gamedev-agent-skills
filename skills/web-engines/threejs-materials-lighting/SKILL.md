@@ -9,7 +9,7 @@ description: >
   renderer/loop setup use threejs-scene-setup; for loading models use
   threejs-gltf-loading.
 license: Apache-2.0
-compatibility: three.js r155+ (verified r184; physically based lighting default)
+compatibility: three.js r165+ (verified against r184; physically based lighting)
 metadata:
   engine: threejs
   category: web-engines
@@ -19,8 +19,8 @@ metadata:
 # three.js Materials & Lighting
 
 Make three.js surfaces look right: pick the correct material, light the scene,
-enable shadows, and add image-based lighting. Patterns target **r155+** (lighting
-is physically based by default), verified against **r184**.
+enable shadows, and add image-based lighting. Patterns target **r165+**, verified
+against **r184** (lighting is physically based by default since r155).
 
 ## When to use
 

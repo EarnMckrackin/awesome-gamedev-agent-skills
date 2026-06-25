@@ -8,7 +8,7 @@ description: >
   "load a 3D model". For scene/camera/renderer setup use threejs-scene-setup; for
   materials and lights use threejs-materials-lighting.
 license: Apache-2.0
-compatibility: three.js r150+ (verified r184; GLTFLoader from three/addons)
+compatibility: three.js r165+ (verified against r184; GLTFLoader from three/addons)
 metadata:
   engine: threejs
   category: web-engines
@@ -19,7 +19,7 @@ metadata:
 
 Load `.gltf`/`.glb` models and play their animations in three.js, including
 compressed geometry (DRACO/Meshopt) and textures (KTX2). Patterns target
-**r150+**, verified against **r184**.
+**r165+**, verified against **r184**.
 
 ## When to use
 

@@ -26,6 +26,24 @@ that Gemini CLI **and** Codex CLI both read is **`.agents/skills/<name>/SKILL.md
 the universal CLI location. Claude Code reads `.claude/skills/`; Kiro reads `.kiro/skills/`.
 Only **Cursor, Windsurf, and Cline** require generated adapters.
 
+## Verified install paths (S13 smoke test)
+
+Checked 2026-06-25 against this repository. The router plus one skill per engine family were
+installed into each native agent's documented location and confirmed to load — valid
+frontmatter, `name` equals the folder, `description` present:
+
+| Agent | Path tested | Skills installed | Result |
+|-------|-------------|------------------|--------|
+| **Kiro** | `.kiro/skills/<name>/` | `router`, `godot-2d-movement`, `unity-csharp-scripting`, `unreal-cpp-gameplay`, `phaser-core`, `love2d-core` | all 6 load (name==folder, description present) |
+| **Claude Code** (v0.20.2) | `.claude/skills/<name>/` | same six | all 6 load; `claude --help` confirms skills resolve via `/skill-name` |
+
+The six cover every engine family (Godot, Unity, Unreal, web, other) plus the router.
+`scripts/validate-skills.py` passes on all 63 files (62 skills + router), so the same files
+satisfy each agent's load contract once copied to its skills directory. **CLIs detected on the
+test machine:** Claude Code, Gemini CLI, Cursor, Kiro (Codex CLI absent — not exercised; it
+shares Gemini's `.agents/skills/` path). Live auto-trigger on a real prompt in a fresh session
+is the manual step in [`INSTALLATION.md`](INSTALLATION.md#verify-after-installing).
+
 ## The portable-core rule
 
 A committed `SKILL.md` contains **only** portable, agent-agnostic content:

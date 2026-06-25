@@ -8,7 +8,7 @@ description: >
   mentions Bevy, ECS, App::new, add_systems, Query, Commands, components/systems,
   or a Cargo.toml depending on bevy.
 license: Apache-2.0
-compatibility: Bevy 0.16+ (Rust; ECS API verified through 0.19)
+compatibility: Bevy 0.16+ (Rust; pin Cargo.toml — APIs shift each minor release)
 metadata:
   engine: bevy
   category: other-engines
@@ -19,8 +19,8 @@ metadata:
 
 Structure a Bevy game in Rust around the Entity Component System: the `App` and
 plugins, components and resources, systems with queries, scheduling, and
-frame-rate-independent updates. Pins **Bevy 0.16+** (code verified against 0.19;
-Bevy moves fast — match your `Cargo.toml`).
+frame-rate-independent updates. Pins **Bevy 0.16+** (code targets 0.16; Bevy's API
+shifts each minor release — match your `Cargo.toml`).
 
 ## When to use
 
@@ -93,7 +93,7 @@ struct Score(u32);
 fn setup(mut commands: Commands) {
     commands.insert_resource(Score(0));
 
-    // Camera2d is a component with required components (no *Bundle since 0.15);
+    // Camera2d is a component with required components (bundles removed in 0.16);
     // spawning it pulls in Transform, Camera, etc. automatically.
     commands.spawn(Camera2d);
 
@@ -180,7 +180,8 @@ impl Plugin for GameplayPlugin {
 - **Panic: "conflicting accesses" / "&mut T and &mut T"** → two `Query`s in one
   system both write the same component, or one reads while another writes overlapping
   entities. Make them disjoint with `With`/`Without`, or use `ParamSet`.
-- **`Camera2dBundle`/`SpriteBundle` not found** → bundles were removed (0.15+).
+- **`Camera2dBundle`/`SpriteBundle` not found** → bundles were deprecated in 0.15 and
+  removed in 0.16.
   Spawn the components directly (`Camera2d`, `Sprite`, `Transform`); required
   components fill in the rest.
 - **"trait `Component` is not implemented"** → you forgot `#[derive(Component)]`

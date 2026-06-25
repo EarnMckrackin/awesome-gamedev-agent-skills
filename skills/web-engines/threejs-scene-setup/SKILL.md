@@ -8,7 +8,7 @@ description: >
   PerspectiveCamera, the render loop, resizing, or OrbitControls. For models use
   threejs-gltf-loading; for materials/lights use threejs-materials-lighting.
 license: Apache-2.0
-compatibility: three.js r150+ (verified r184; ES modules + import maps)
+compatibility: three.js r165+ (verified against r184; ES modules + import maps)
 metadata:
   engine: threejs
   category: web-engines
@@ -19,7 +19,7 @@ metadata:
 
 Create the foundation of a three.js app: module loading, the
 scene/camera/renderer trio, the render loop, responsive resizing, and camera
-controls. Patterns target **r150+** and are verified against **r184**.
+controls. Patterns target **r165+** and are verified against **r184**.
 
 ## When to use
 

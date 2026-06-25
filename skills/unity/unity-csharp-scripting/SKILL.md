@@ -126,7 +126,7 @@ private System.Collections.IEnumerator FlashThenHide()
   `gameObject.CompareTag("Enemy")`.
 - **Coroutines stop when the GameObject is disabled** — a disabled object's coroutines are
   killed; re-`StartCoroutine` in `OnEnable` if it must survive toggling.
-- **`Update` runs before `Start` never happens, but the *first* `Update` can run the same
+- **`Update` never runs before `Start`, but the *first* `Update` can run on the same
   frame as `Start`** — guard against not-yet-initialised fields if you split setup oddly.
 
 ## References

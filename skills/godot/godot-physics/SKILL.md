@@ -127,8 +127,8 @@ func ground_under(global_from: Vector2) -> Dictionary:
 - **Forgetting a `CollisionShape`** (or leaving it empty) means the body never collides.
 - **Fast objects tunnel** through thin walls; enable **continuous CD** on the RigidBody
   (`continuous_cd`) or use a raycast-based check.
-- **`intersect_ray` excludes its own body?** Pass `query.exclude = [self]` (array of RIDs)
-  to skip self-hits.
+- **`intersect_ray` excludes its own body?** Pass `query.exclude = [self.get_rid()]` (an
+  `Array[RID]`, not an array of nodes) to skip self-hits.
 
 ## References
 

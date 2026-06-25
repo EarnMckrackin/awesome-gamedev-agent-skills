@@ -30,7 +30,7 @@ Palette, colliders, and runtime painting. Targets **Unity 6 (6000.0 LTS)**.
 - Use when scenes contain a `Grid` with `Tilemap` children, or `*.asset` tile/palette files.
 
 **When *not* to use:** level *design* practice (pacing, blockout, layout principles) →
-`level-design`. 3D tile/grid placement → `unity` 3D tooling. The platformer character that
+`level-design`. 3D tile/grid placement → Unity's own 3D tooling (ProBuilder / grid brushes; no dedicated skill here). The platformer character that
 moves over the tiles → `platformer` / `unity-physics`.
 
 ## Core workflow

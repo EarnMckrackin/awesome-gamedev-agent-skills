@@ -108,7 +108,7 @@ func pop_in(node: Control) -> void:
 - **AnimationPlayer and AnimationTree fighting.** When an `AnimationTree` is active, don't
   also call `AnimationPlayer.play()` for the same tracks — let the tree own playback.
 - **3.x Tween node is gone.** There is no `Tween` node to add in 4.x; create tweens in
-  code with `create_tween()` (a `SceneTreeTween`). They auto-start and free themselves.
+  code with `create_tween()` (which returns a `Tween`). They auto-start and free themselves.
 - **Reusing a finished tween.** A tween is one-shot; call `create_tween()` again for a new
   animation. Use `set_loops()` for repetition.
 - **`yield`/`yield(anim, "...")` is gone.** Use `await anim.animation_finished`.

@@ -19,10 +19,10 @@ Status legend: ⬜ pending · 🟦 in progress · ✅ done
 | S10 | Author: Genres | 3 | ✅ | [SESSION-10-genres.md](SESSION-10-genres.md) — 9 compositional genre templates |
 | S11 | Author: Workflows | 3 | ✅ | [SESSION-11-workflows.md](SESSION-11-workflows.md) — 4 process/shipping skills |
 | S12 | Master router skill (+ integrate) | 4 | ✅ | [SESSION-12-router.md](SESSION-12-router.md) — branches S06–S11 merged to main; `router/SKILL.md` + references; validator passes (63 files); 18-case routing matrix |
-| S13 | QA, validation & originality audit | 5 | ⬜ | — |
+| S13 | QA, validation & originality audit | 5 | ✅ | [SESSION-13-qa.md](SESSION-13-qa.md) — validator green (63 files); 22 fixes across 14 skills; routing matrix + 8 edge cases pass; Kiro + Claude Code smoke test recorded |
 | S14 | README & docs polish | 6 | ⬜ | — |
 | S15 | Final consolidation & release | 6 | ⬜ | — |
-| S16 | Launch / go-to-market | 6 | ⬜ | — |
+| S16 | Community handoff & maintenance | 6 | ⬜ | — |
 
 ## Waves
 
@@ -30,5 +30,5 @@ Status legend: ⬜ pending · 🟦 in progress · ✅ done
 - **Wave 2** (S05): standards + taxonomy + router spec locked (gate). ✅ **gate passed — Wave 3 unblocked**
 - **Wave 3** (S06–S11): author the skills in parallel. ✅ done — all 62 v1 skills authored and merged to `main`.
 - **Wave 4** (S12): build the master router and integrate. ✅ done — six session branches merged; `router/SKILL.md` + `router/references/` added; validator passes on 63 files (62 skills + router).
-- **Wave 5** (S13): QA, validation, originality audit. ⬜ next.
-- **Wave 6** (S14–S16): docs polish → release → launch.
+- **Wave 5** (S13): QA, validation, originality audit. ✅ done — validator green; rubric/originality/routing verified; cross-agent smoke test recorded.
+- **Wave 6** (S14–S16): docs polish → release → community handoff.

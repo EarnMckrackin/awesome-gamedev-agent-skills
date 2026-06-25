@@ -85,7 +85,7 @@ before hand-rolling.
 
 ```gdscript
 # Fast, small bodies skip past thin colliders between ticks. Two fixes:
-body.continuous_cd = true            # Unity: rb.collisionDetectionMode = Continuous
+body.continuous_cd = true            # RigidBody3D bool (RigidBody2D: CCD_MODE_* enum). Unity: rb.collisionDetectionMode = Continuous
 # Cap velocity so a single step can't move more than ~one collider thickness.
 const MAX_SPEED := 40.0
 if velocity.length() > MAX_SPEED:

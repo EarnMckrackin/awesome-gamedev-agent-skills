@@ -163,7 +163,7 @@ app.stage.addChild(background);
 - **`app.view` is undefined** → v8 renamed it to `app.canvas`.
 - **v7 code throwing** → `interactive = true` → `eventMode = 'static'`; `Loader`/
   `loader.add` → `Assets.load`; synchronous `new Application({...})` → async `init`.
-- **Top-level await build error (Vite ≤6)** → wrap boot in `(async () => { ... })()`.
+- **Top-level await build error (Vite ≤6.0.6)** → wrap boot in `(async () => { ... })()`.
 - **Speed varies with frame rate** → multiply movement by `ticker.deltaTime` (or use
   `deltaMS`); never assume 60fps.
 - **Clicks do nothing** → the object's `eventMode` is still `'none'` (the default);

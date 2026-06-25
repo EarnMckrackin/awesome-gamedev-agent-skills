@@ -69,7 +69,7 @@ func set_bus_volume(bus_name: String, slider01: float) -> void:
     var db := linear_to_db(clamp(slider01, 0.0001, 1.0))   # 0 -> silence, 1 -> 0 dB
     AudioServer.set_bus_volume_db(idx, db)
 # RIGHT: slider -> dB via linear_to_db. WRONG: assigning slider01 straight as dB
-# (a "0.5" would be only -0.5 dB — almost no change — and 0 would be 0 dB, full).
+# (a "0.5" would be only +0.5 dB — almost no change — and 0 would be 0 dB, full).
 ```
 
 ### 2. Ducking via sidechain (music dips under voice)

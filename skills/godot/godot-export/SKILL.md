@@ -67,7 +67,7 @@ godot --headless --export-pack "Linux/X11" build/game.pck
 ```bash
 # No window/GPU — for a server build or automated runs.
 godot --headless --path . res://server_main.tscn
-# Quit automatically after N seconds for a smoke test:
+# Quit after N main-loop iterations (frames, NOT seconds) — handy for a headless smoke test:
 godot --headless --path . --quit-after 600
 ```
 
