@@ -7,8 +7,6 @@
        alt="awesome-gamedev-agent-skills — game-dev skills for your AI coding agent. Build any game, in any engine. 66 skills and a router across 10 engines, installed with one command. Sample game screenshots: a cozy farming sim, a metroidvania, a low-poly 3D island, an atmospheric platformer, and a top-down dungeon crawler.">
 </p>
 
-<p align="center"><sub><b>67</b> <code>SKILL.md</code> files in total — <b>66</b> task skills + a <a href="router/SKILL.md">master router</a> that loads them.</sub></p>
-
 **Game-development expertise for AI coding agents — install once, and a router loads the
 right skill for whatever you're building.**
 
