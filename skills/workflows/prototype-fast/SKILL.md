@@ -122,4 +122,6 @@ spike. Prototype code carries prototype assumptions; shipping it ships the assum
 ## Related skills
 
 - `game-jam` — same scope discipline applied to a timed competition with a submission.
+- `playtest-loop` — the playtest-and-amend iteration that starts once a prototype earns a
+  "keep": one mechanic at a time, named tuning values, debug overlay.
 - Engine cores and genre skills — where a "keep" decision gets rebuilt properly.

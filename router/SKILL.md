@@ -7,10 +7,10 @@ description: >
   players, levels, enemies, shaders, UI/UX, cameras, game feel, physics, input, audio, saving,
   multiplayer, AI, dialogue, procedural generation, or performance, for genres (platformer,
   roguelike, RPG, FPS, tower-defense, card game, visual novel, survival-crafting, puzzle), and for
-  shipping (game jam, Steam, itch). Start here
+  process and shipping (game jam, prototyping, playtest iteration, Steam, itch). Start here
   when unsure which gamedev skill to use.
 license: Apache-2.0
-compatibility: Engine-agnostic dispatcher over the skills/ collection (66 skills, 8 categories)
+compatibility: Engine-agnostic dispatcher over the skills/ collection (67 skills, 8 categories)
 metadata:
   engine: none
   category: router
@@ -78,8 +78,9 @@ After the engine, read the request for task signals (three **additive** categori
 - **genres** (whole-game templates): `platformer`, `roguelike`, `rpg`, `fps-shooter`,
   `tower-defense`, `card-game`, `visual-novel`, `survival-crafting`, `puzzle`. Triggered by genre
   words ("make a roguelike", "deckbuilder").
-- **workflows** (process/shipping): `game-jam`, `prototype-fast`, `steam-publish`,
-  `itch-publish`. Triggered by process words ("publish on Steam", "vertical slice").
+- **workflows** (process/shipping): `game-jam`, `prototype-fast`, `playtest-loop`,
+  `steam-publish`, `itch-publish`. Triggered by process words ("publish on Steam",
+  "vertical slice", "feels floaty/wrong — tune it").
 
 File signals sharpen this: `*.yarn`/`*.ink` → `dialogue-systems`/`visual-novel`; `steam_appid.txt`
 → `steam-publish`; `*.inputactions` → `unity-input-system`.
@@ -139,8 +140,9 @@ File signals sharpen this: `*.yarn`/`*.ink` → `dialogue-systems`/`visual-novel
 ### 3d. Workflows — engine-independent process & shipping
 
 `game-jam` (jam, 48-hour, Ludum Dare/GMTK) · `prototype-fast` (vertical slice, MVP, greybox) ·
-`steam-publish` (Steam, Steamworks, depot; `steam_appid.txt`) · `itch-publish` (itch.io, butler;
-`.itch.toml`).
+`playtest-loop` (playtest feedback, "feels wrong/floaty/sluggish", tuning values, iterate one
+mechanic) · `steam-publish` (Steam, Steamworks, depot; `steam_appid.txt`) · `itch-publish`
+(itch.io, butler; `.itch.toml`).
 
 For the exhaustive per-skill trigger list and every engine binding, read
 `references/routing-table.md`.
@@ -205,6 +207,7 @@ and offer to load it if the user confirms.
 | "make hits feel punchy in my Godot game" | Godot (`project.godot`) | `game-feel` (+ `camera-systems` for shake) |
 | "the camera should follow my player smoothly" | (detected engine) | `camera-systems` (+ engine movement skill) |
 | "my Unity game drops to 30 FPS, optimize it" | Unity (`Assets/`+`ProjectSettings/`) | `performance-optimization` (profile first) → engine skill |
+| "the jump feels floaty, fix the feel" | (detected engine) | `playtest-loop` (amend loop) + engine movement skill |
 
 ## References
 
